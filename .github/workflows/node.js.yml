@@ -27,8 +27,8 @@ jobs:
  #     if: ${{github.event_name == 'pull_request'}}
       uses: jcroall/blackduck-scan-action@1
       with:
-        url: https://testing.blackduck.synopsys.com
-        token: ${{ secrets.BLACKDUCK_TOKEN }}
+        url: ${{ secrets.BLACKDUCK_URL }}
+        token: ${{ secrets.BLACKDUCK_API_TOKEN }}
         mode: rapid
         output: blackduck-output
           
@@ -37,8 +37,8 @@ jobs:
  #     if: ${{github.event_name == 'pull_request'}}
       uses: jcroall/blackduck-workflow-action@1
       with:
-        url: https://testing.blackduck.synopsys.com
-        token: ${{ secrets.BLACKDUCK_TOKEN }}
+        url: ${{ secrets.BLACKDUCK_URL }}
+        token: ${{ secrets.BLACKDUCK_API_TOKEN }}
         fixpr: true
         comment: true
         upgrademajor: true
