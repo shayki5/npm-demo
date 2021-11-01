@@ -51,12 +51,12 @@ jobs:
         upgrademajor: true
         input: blackduck-output
         sarif: blackduck-sarif.json
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
           
-      - name: Upload SARIF file
-        if: ${{github.event_name == 'pull_request'}}
-        uses: github/codeql-action/upload-sarif@v1
-        with:
-          # Path to SARIF file relative to the root of the repository
-          sarif_file: blackduck-sarif.json
+    - name: Upload SARIF file
+      if: ${{github.event_name == 'pull_request'}}
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        # Path to SARIF file relative to the root of the repository
+        sarif_file: blackduck-sarif.json
