@@ -6,3 +6,4 @@ exports.isPrime = function(number){
     }
     return number > 1;
 }
+//test
