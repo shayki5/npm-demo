@@ -24,7 +24,7 @@ jobs:
     
     # Runs a Black Duck rapid scan on pull requests
     - name: Run RAPID Black Duck security scan
-      if: ${{github.event_name == 'pull_request'}}
+ #     if: ${{github.event_name == 'pull_request'}}
       uses: jcroall/blackduck-scan-action@1
       with:
         url: https://testing.blackduck.synopsys.com
@@ -34,7 +34,7 @@ jobs:
           
     # Runs special workflow steps for pull requests
     - name: Run Black Duck Advanced Workflow
-      if: ${{github.event_name == 'pull_request'}}
+ #     if: ${{github.event_name == 'pull_request'}}
       uses: jcroall/blackduck-workflow-action@1
       with:
         url: https://testing.blackduck.synopsys.com
@@ -48,7 +48,7 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
           
     - name: Upload SARIF file
-      if: ${{github.event_name == 'pull_request'}}
+ #     if: ${{github.event_name == 'pull_request'}}
       uses: github/codeql-action/upload-sarif@v1
       with:
         # Path to SARIF file relative to the root of the repository
