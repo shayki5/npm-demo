@@ -49,8 +49,8 @@ jobs:
         fixpr: true
         comment: true
         upgrademajor: true
-          input: blackduck-output
-          sarif: blackduck-sarif.json
+        input: blackduck-output
+        sarif: blackduck-sarif.json
         env:
           GITHUB_TOKEN: ${{ github.token }}
           
