@@ -42,7 +42,7 @@ jobs:
         token: ${{ secrets.BLACKDUCK_API_TOKEN }}
         fix_pr: true
         comment_on_pr: true
-        upgrademajor: true
+        upgrade_major: true
         upgrade_indirect: true
         trustcert: true
         mode: rapid
