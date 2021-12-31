@@ -40,8 +40,8 @@ jobs:
       with:
         url: ${{ secrets.BLACKDUCK_URL }}
         token: ${{ secrets.BLACKDUCK_API_TOKEN }}
-        fix_pr: false
-        comment_on_pr: true
+        fix_pr: true
+        comment_on_pr: false
         upgrade_major: true
         upgrade_indirect: true
         trustcert: true
