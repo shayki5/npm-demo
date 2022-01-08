@@ -25,7 +25,7 @@ jobs:
     # Runs special workflow steps for pull requests
     - name: Run Black Duck Advanced Workflow
       if: ${{github.event_name == 'pull_request'}}
-      uses: matthewb66/blackduck-scan-action@v34
+      uses: matthewb66/blackduck-scan-action@v35
       with:
         url: ${{ secrets.BLACKDUCK_URL }}
         token: ${{ secrets.BLACKDUCK_API_TOKEN }}
@@ -43,7 +43,7 @@ jobs:
     # Runs special workflow steps for pull requests
     - name: Run Black Duck Advanced Workflow
       if: ${{github.event_name == 'push'}}
-      uses: matthewb66/blackduck-scan-action@v34
+      uses: matthewb66/blackduck-scan-action@v35
       with:
         url: ${{ secrets.BLACKDUCK_URL }}
         token: ${{ secrets.BLACKDUCK_API_TOKEN }}
