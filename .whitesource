@@ -1,19 +1,29 @@
 {
+
     "scanSettings": {
+
         "configMode": "LOCAL",
+
         "configExternalURL": "",
+
         "projectToken": "",
+
         "baseBranches": []
+
     },
 
     "checkRunSettings": {
+
         "displayMode": "diff",
+
         "vulnerableCheckRunConclusionLevel": "failure"
+
     },
 
     "issueSettings": {
+
         "minSeverityLevel": "LOW"
+
     }
 
 }
-
