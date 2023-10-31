@@ -1,36 +1,47 @@
-{
-
-    "scanSettings": {
-
-        "configMode": "LOCAL",
-
-        "configExternalURL": "",
-
-        "projectToken": "",
-
-        "baseBranches": []
-
-    },
-
-    "checkRunSettings": {
-
-        "displayMode": "diff",
-
-        "vulnerableCheckRunConclusionLevel": "failure"
-
-    },
-
-    "issueSettings": {
-
-        "minSeverityLevel": "LOW"
-
-    },
+{ 
+  "scanSettings": {
+    "configMode": "LOCAL",
+    "configExternalURL": "",
+    "projectToken": "",
+    "baseBranches": []
+  },
+  "checkRunSettings": {
+    "vulnerableCheckRunConclusionLevel": "failure",
+    "displayMode": "diff"
+  },
+  "issueSettings": {
+    "minSeverityLevel": "LOW",
+    "issueType": "DEPENDENCY"
+  },
+  "leastVulnerablePackageSettings": {                 
+    "enabled": true     
+  },
   "remediateSettings": {
+    "workflowRules": {
+      "enabled": true
+    },
     "enableRenovate": true,
-    "workflowRules":{"enabled":true}
+    "extends": [
+      "config:base",
+      "github>whitesource/merge-confidence:beta"
+      ],
+      "packageRules": [
+      {
+        "groupName": "minor and patch",
+      	 "matchUpdateTypes": ["minor", "patch"],
+      	 "matchConfidence": ["very high", "high"],
+      	 "automerge": true
+      },
+      {
+      	 "matchUpdateTypes": ["major"],
+      	 "matchConfidence": ["very high"],
+      	 "addLabels": ["Major: very high confidence"]
+      },
+      {
+      	 "matchUpdateTypes": ["major"],
+      	 "matchConfidence": ["high"],
+      	 "addLabels": ["Major: high confidence"]
+      }
+    ]
+  }
 }
-}
-
-
-
-
